@@ -14,9 +14,9 @@ Panduan interaktif lengkap: [Portal Codelabs TRPL Poliwangi](https://codelabs-po
 
 | Informasi | Data Mahasiswa |
 |---|---|
-| **Nama Lengkap** | Mahasiswa TRPL Poliwangi *(Ganti dengan Nama Lengkap Anda)* |
-| **NIM** | 362458302000 *(Ganti dengan NIM Asli Anda)* |
-| **Kelas / Angkatan** | TRPL 5A / 2024 |
+| **Ayu nandha rizkie** | Mahasiswa TRPL Poliwangi *(Ganti dengan Nama Lengkap Anda)* |
+| **362558302095** | 362458302000 *(Ganti dengan NIM Asli Anda)* |
+| **TRPL 2C / 2025* | TRPL 5A / 2024 |
 | **Dosen Pengampu** | Sepyan Purnama Kristanto, M.Kom. |
 
 ---
