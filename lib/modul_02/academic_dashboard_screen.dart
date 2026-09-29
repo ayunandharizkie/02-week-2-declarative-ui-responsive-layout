@@ -7,7 +7,8 @@ class AcademicDashboardScreen extends StatefulWidget {
   const AcademicDashboardScreen({super.key});
 
   @override
-  State<AcademicDashboardScreen> createState() => _AcademicDashboardScreenState();
+  State<AcademicDashboardScreen> createState() =>
+      _AcademicDashboardScreenState();
 }
 
 class _AcademicDashboardScreenState extends State<AcademicDashboardScreen> {
@@ -40,7 +41,9 @@ class _AcademicDashboardScreenState extends State<AcademicDashboardScreen> {
           foregroundColor: Colors.white,
           actions: [
             IconButton(
-              icon: Icon(_isDarkMode ? Icons.light_mode_rounded : Icons.dark_mode_rounded),
+              icon: Icon(_isDarkMode
+                  ? Icons.light_mode_rounded
+                  : Icons.dark_mode_rounded),
               tooltip: _isDarkMode ? 'Mode Terang' : 'Mode Gelap',
               onPressed: _toggleDarkMode,
             ),
@@ -64,20 +67,18 @@ class _AcademicDashboardScreenState extends State<AcademicDashboardScreen> {
                       ),
                     ),
                     const SizedBox(width: 20),
-                    // Kolom kanan: jumlah kolom mengikuti ruang yang tersedia.
+                    // Kolom kanan: grid 2 kolom daftar mata kuliah
                     Expanded(
                       flex: 3,
                       child: GridView.builder(
-                        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                          // Lebar kartu tidak melebihi 340 dp. Pada ruang yang
-                          // cukup GridView menambah kolom; pada ruang sempit
-                          // jumlah kolom otomatis berkurang.
-                          maxCrossAxisExtent: 340,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
                           crossAxisSpacing: 16,
                           mainAxisSpacing: 16,
-                          // Tinggi eksplisit agar seluruh isi CourseCard muat.
-                          // Jangan gabungkan dengan childAspectRatio.
-                          mainAxisExtent: 240,
+                          // Konten CourseCard memerlukan tinggi stabil; rasio
+                          // lebar/tinggi 1.4 membuat kartu grid terlalu pendek.
+                          mainAxisExtent: 230,
                         ),
                         itemCount: _courses.length,
                         itemBuilder: (context, index) {
@@ -98,7 +99,8 @@ class _AcademicDashboardScreenState extends State<AcademicDashboardScreen> {
                 const SizedBox(height: 16),
                 Text(
                   'Mata Kuliah Semester 5 (${_courses.length} Terdaftar)',
-                  style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 16, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 12),
                 ..._courses.map((course) => CourseCard(course: course)),
